@@ -7,13 +7,16 @@ goods = [
     {'title': None, 'price': 1234}
 ]
 
-
-def main():
+def task1():
     for i in field(goods, 'title'):
         print(i)
 
     for i in field(goods, 'title', 'color'):
         print(i)
+
+
+def main():
+    task1()
 
 
 if __name__ == '__main__':
