@@ -72,8 +72,9 @@ def main():
     else:
         print("Корни данного уравнения:")
         for root in roots:
-            print(root, end = " ")
+            print(root, end=" ")
         print()
+
 
 if __name__ == '__main__':
     main()
