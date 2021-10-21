@@ -1,4 +1,5 @@
 from itertools import chain
+from lab_python_fp.print_task import print_task
 
 
 def field(items, *args):
@@ -9,3 +10,19 @@ def field(items, *args):
         {key: val for key, val in item.items() if val is not None}
         for item in items if item.keys() & args and any(i is not None for i in item.values())
     ]
+
+
+@print_task
+def task1():
+    goods = [
+        {'title': 'Ковер', 'price': 2000, 'color': 'green'},
+        {'title': 'Диван для отдыха', 'color': 'black'},
+        {'title': None, 'color': 'white', 'price': None},
+        {'title': None, 'price': 1234}
+    ]
+
+    for i in field(goods, 'title'):
+        print(i)
+
+    for i in field(goods, 'title', 'price'):
+        print(i)
