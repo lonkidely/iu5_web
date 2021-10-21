@@ -1,6 +1,3 @@
-from lab_python_fp.print_task import print_task
-
-
 def print_result(func):
     def wrapper(*args):
         result = func(*args)
@@ -40,8 +37,7 @@ def test_4():
     return [1, 2]
 
 
-@print_task
-def task5():
+if __name__ == '__main__':
     test_1()
     test_2()
     test_3()

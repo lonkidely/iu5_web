@@ -1,6 +1,3 @@
-from lab_python_fp.print_task import print_task
-
-
 class Unique(object):
     def __init__(self, items, **kwargs):
         self.used = set()
@@ -31,8 +28,7 @@ class Unique(object):
         return self
 
 
-@print_task
-def task3():
+if __name__ == '__main__':
     data = [1, 1, 2, 2, 1, 2, 1, 2, 2, 1]
     for val in Unique(data):
         print(val, end=" ")

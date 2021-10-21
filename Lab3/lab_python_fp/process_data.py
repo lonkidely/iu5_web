@@ -1,12 +1,10 @@
 import json
-import sys
-from lab_python_fp.field import field
-from lab_python_fp.cm_timer import cm_timer_1
-from lab_python_fp.print_result import print_result
-from lab_python_fp.gen_random import gen_random
-from lab_python_fp.print_task import print_task
+from field import field
+from cm_timer import cm_timer_1
+from print_result import print_result
+from gen_random import gen_random
 
-path = "./data_light.json"
+path = "../data_light.json"
 
 with open(path) as f:
     data = json.load(f)
@@ -33,7 +31,6 @@ def f4(arg):
         zip(arg, [(', зарплата ' + str(val) + ' руб.') for val in list(gen_random(len(arg), 100000, 200000))]))]
 
 
-@print_task
-def task7():
+if __name__ == '__main__':
     with cm_timer_1():
         f4(f3(f2(f1(data))))

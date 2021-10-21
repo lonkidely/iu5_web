@@ -1,5 +1,9 @@
-from itertools import chain
-from lab_python_fp.print_task import print_task
+goods = [
+    {'title': 'Ковер', 'price': 2000, 'color': 'green'},
+    {'title': 'Диван для отдыха', 'color': 'black'},
+    {'title': None, 'color': 'white', 'price': None},
+    {'title': None, 'price': 1234}
+]
 
 
 def field(items, *args):
@@ -12,15 +16,7 @@ def field(items, *args):
     ]
 
 
-@print_task
-def task1():
-    goods = [
-        {'title': 'Ковер', 'price': 2000, 'color': 'green'},
-        {'title': 'Диван для отдыха', 'color': 'black'},
-        {'title': None, 'color': 'white', 'price': None},
-        {'title': None, 'price': 1234}
-    ]
-
+if __name__ == '__main__':
     for i in field(goods, 'title'):
         print(i)
 
