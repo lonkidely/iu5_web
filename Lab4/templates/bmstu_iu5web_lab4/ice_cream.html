@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} Мороженое вида №{{ ice_cream.id }} {% endblock title %}
+
+{% block nav %}
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href={% url 'index' %}>На главную</a>
+        </li>
+        {% for item in navbar %}
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="{% url 'ice_cream' item.id %}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock nav %}
+{% block main %}
+    <div class="container center-block">
+        <div>
+            <H2>Информация о мороженом вида №{{ ice_cream.id }}</H2>
+            <img class="pic" src="/static/imgs/{{ ice_cream.id }}.jpg">
+        </div>
+        <div>
+            <H3>Описание:</H3>
+            <table>
+
+                <tr>
+                    <td>Производитель</td>
+                    <td>{{ ice_cream.manufacturer }}</td>
+                </tr>
+                <tr>
+                    <td>Вкус</td>
+                    <td>{{ ice_cream.flavor }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock main %}
