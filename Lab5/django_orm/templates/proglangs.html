@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список языков программирования</title>
+</head>
+<body>
+<div class="content-wrapper">
+    <a href="/">На главную</a>
+    <ul>
+    {% for lang in langs %}
+        <li>
+        <a href="/lang/{{ lang.id }}">{{ lang.title }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
