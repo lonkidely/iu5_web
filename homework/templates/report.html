@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% block title %} Языки-операторы {% endblock %}
+{% block body %}
+    <div class="d-flex flex-row justify-content-between">
+        <div class="p-2"></div>
+        <div class="p-2">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Название ЯП</th>
+                    <th scope="col">Описание</th>
+                    <th scope="col">Оператор</th>
+                    <th scope="col">Количество тактов ЦП</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for oper in data.opers %}
+                    <tr>
+                        <th scope="row">{{ oper.lang.title }}</th>
+                        <td>{{ oper.lang.descr }}</td>
+                        <td>{{ oper.title }}</td>
+                        <td>{{ oper.count_cycles }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="p-2"></div>
+    </div>
+{% endblock %}
